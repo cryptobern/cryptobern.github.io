@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# Christian Cachin
+# [Christian Cachin](//crypto.unibe.ch/cc/)
 
 I am a cryptographer and computer scientist interested in distributed
 computing, cryptographic protocols, and security, and a professor of
