@@ -127,9 +127,10 @@ open question for years.
 A newly published paper that [Björn
 Tackmann](https://researcher.watson.ibm.com/researcher/view.php?person=zurich-BTA)
 of IBM Research and I co-authored answers this question.  It introduces a
-new model for [**asymmetric distributed trust**]() and formalizes Byzantine
-quorum systems that allow subjective trust.  Every node is free to choose
-which combinations of other nodes it trusts or considers faulty.
+new model for [**asymmetric distributed
+trust**](https://arxiv.org/abs/1906.09314) and formalizes Byzantine quorum
+systems that allow subjective trust.  Every node is free to choose which
+combinations of other nodes it trusts or considers faulty.
 
 ![Asymmetric quorum system](/images/asymmetric_quorum.png){: width="66%" .center-image}
 
@@ -149,6 +150,6 @@ be able to clearly evaluate their voting power and to check whether given
 choices of "whom trusts whom" are safe for operating the network or if they
 carry the risk of failure.
 
-[Link to arxiv.org paper](http://arxiv.org/abs/1906.09314)
+[Link to arxiv.org paper](https://arxiv.org/abs/1906.09314)
 
 
