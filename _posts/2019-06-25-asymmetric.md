@@ -3,7 +3,7 @@ layout: post
 title: Asymmetric distributed trust
 ---
 
-A sound model for blokchain consensus with flexible and subjective trust.
+A sound model for blockchain consensus with flexible and subjective trust.
 
 
 ## Blockchain and consensus
