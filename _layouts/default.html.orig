@@ -5,20 +5,14 @@
 
     {% include meta.html %}
 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-64.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-128.png" sizes="128x128">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/images/ico/boxblog-228.png" sizes="228x228">
-    <link rel="apple-touch-icon" href="/images/ico/boxblog-180.png" />
-    
   </head>
 
   <body>
