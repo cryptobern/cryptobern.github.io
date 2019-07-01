@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Asymmetric distributed trust
+ghcommentid: 1
 ---
 
 A sound model for blockchain consensus with flexible and subjective trust.
