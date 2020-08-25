@@ -13,19 +13,20 @@ _Many academics will confess to have made the assumption that failures of compon
 
 ## Expressing richer trust models
 
-[Orestis Alpos](//crypto.unibe.ch/oa/) knows a better way than that. In [recent work](https://arxiv.org/abs/2006.04616), we have shown how to run consensus protocols with generalized trust that respects dependencies and which go far beyond thresholds.
+[Orestis Alpos](//crypto.unibe.ch/oa/) knows a better way than that. In [recent work](https://arxiv.org/abs/2006.04616), we have shown how to run consensus protocols with generalized trust that respects dependencies and goes far beyond thresholds.
 
-Consider a hypothetical organization with 12 members *B0, ..., B11*, who are jointly responsible for running a trusted system.  To be concrete, think of approving transactions on a distributed ledger using blockchain technology, where each member has a different function.
+Consider a hypothetical organization with 16 members, jointly responsible for running a trusted system. To be concrete, think of approving transactions on a distributed ledger using blockchain technology, where members can have different functions and be trusted differently.
 
-Although diverse, the members are arranged into four areas (denoted by *A0, ..., A3* here) depending on their particular strengths, such that some members are more important than others, for example, because they are competent in two neighboring areas.  As shown in the figure, members *B0*, *B3*, *B6*, and *B9* each belong to two areas.
+
+The organization consists of four areas and the members are structured in two layers. The members *A0, ..., A3* belong to the first layer, each responsible for one area, and *B0, ..., B11* belong to the second layer, in such a way that four of them are always responsible for one area. As shown in the figure, members *B0*, *B3*, *B6*, and *B9* are responsible for two areas. 
 
 ![Two-layered one-common quorum system](/images/beyondthreshold-1common.png){: width="90%" .center-image}
 
-This trust structure takes the areas into account and requires everything to be approved by three of the four areas, where any two members may speak for one area and some members belong to two areas.  We call this a 2-layered-1-common (2L1C) Byzantine quorum system (BQS).  It illustrates a loosely hierarchical trust structure with two levels that cannot be represented by a tree.
+This trust structure takes the areas into account and requires everything to be approved by three of the four areas, where in each area the server in the first layer plus two out of the four servers in the second layer are required for approval. We call this a 2-layered-1-common (2L1C) Byzantine quorum system (BQS). It illustrates a hierarchical trust structure, where the members of the first layer are more important for approval and the members of the second layer are also not trusted equally, for example, because they are competent in two neighboring areas. This cannot be represented by a threshold.
 
 For running a BFT consensus protocol under this assumption, we have to solve several problems:
 
-* How does the user specify  generalized BQS compactly?  The example here has 792 distinct maximal quorums.
+* How does the user specify  generalized BQS compactly?  The example here has 792 distinct minimal quorums.
 
 * How to encode the BQS internally?  For instance, this could be done using a [monotone Boolean formula (MBF)](https://en.wikipedia.org/wiki/Boolean_algebra) that uses threshold gates or a [monotone span program (MSP)](https://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/KW93/proc.pdf), a linear-algebraic formulation of computation, which also characterizes all linear secret-sharing schemes.
 
@@ -35,7 +36,7 @@ For running a BFT consensus protocol under this assumption, we have to solve sev
 
 In [our paper](https://arxiv.org/abs/2006.04616), which appears at [SRDS 2020](//srds-conference.org/) in September, we address these challenges and demonstrate that BFT consensus can run fast under generalized trust assumptions.  We adapted the [HotStuff Byzantine consensus algorithm](//doi.org/10.1145/3293611.3331591) to support generalized trust assumptions and evaluated its performance by means of benchmarks run over a datacenter network.
 
-In one of our experiments, we compare these two encodings for two possible trust structures, namely the threshold BQS with the 2L1C BQS described earlier for 16 .. 40 members.  The graph below shows the measured throughput in number of transactions (without batching, and where _MSP-Replicas_ stands for one of several implementations of _MSP-HotStuff_):
+In one of our experiments, we compare these two encodings for two possible trust structures, namely the threshold BQS and the 2L1C BQS described earlier for 16 .. 40 members.  The graph below shows the measured throughput in number of transactions (where _MSP-Replicas_ stands for one of several implementations of MSP-based HotStuff):
 
 ![Throughput](/images/beyondthreshold-throughput.png){: width="75%" .center-image}
 
