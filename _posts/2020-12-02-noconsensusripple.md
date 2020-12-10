@@ -52,3 +52,32 @@ agreement on common trusted nodes with the UNL signed by Ripple. If one or more 
 If Ripple instead had adopted one of the standard BFT consensus protocols, which have been carefully described and analyzed in the scientific literature and are operating in blockchain networks today, then the network would not be exposed to such dangers.
 
 [Link to the preprint on arxiv.org](https://arxiv.org/abs/2011.14816)
+
+
+## Response to discussions after first publication of this post
+
+_(added on December 10, 2020)_
+
+David Schwartz responded on Twitter that [XRPL was designed to prioritize safety over liveness](https://twitter.com/JoelKatz/status/1334291062609698816). But the established practice in the formal study of such distributed protocols requires to satisfy both, safety *and* liveness, because achieving one of them without the other, is useless.
+
+In the standard models for proving consensus protocols, it is customary that (a) messages may be delayed arbitrarily and that (b) faulty nodes can send out conflicting messages. In the context of Ripple's protocol, a less realistic model has been used:
+
+* messages among correct nodes must arrive timely, in contrast to (a).
+
+* assuming that every correct node always receives the same messages from faulty nodes, refuting (b). This is called "Byzantine accountability" by Chase and MacBrough [1].
+
+In other words, every validator must in a timely manner receive every message sent, even if sent by a faulty validator with partial influence over the network. Protocols in this model are clearly less resilient than those in the standard model.
+
+The requirement of **41% overlap** between UNLs (using a quorum size of 80% of a UNL; by Chase and MacBrough [1], p. 13) uses this strong and unrealistic model. In the standard model, the requirements are higher.
+
+Chase and MacBrough [1] assume 20% of nodes in a UNL may fail and show (Thm. 8) that if every two UNLs overlap by **at least 90%**, then the protocol maintains safety and does not fork. If more failures may occur, the UNLs must overlap even more. Recall a validator must choose via its UNL whom to trust: but its choices are limited by the required overlaps.
+
+Our findings about safety violations are compatible with the bounds established earlier. As easily seen from our example violating safety, even when the UNLs of the white and black nodes **overlap by 60%**, then the ledger may fork.
+
+In contrast, BFT consensus makes the standard assumptions (a) and (b), as done in Tendermint, Hyperledger Fabric, Libra and many others. Many formal proofs exist that these protocols achieve safety and liveness, with up to 33% arbitrarily faulty nodes.
+
+Our earlier conclusion is confirmed: If Ripple would use one of the standard BFT consensus protocols, they would benefit from well-understood guarantees under clearly stated assumptions (no timeouts affecting safety) and better resilience to faults (33% instead of 20%). The downside is to use **100% UNL overlap**, in Ripple's terminology. But this would not change much from the assumptions of today. And it may be necessary anyway: in theory, 90% UNL overlap are required to guarantee safety in the existing analysis [1], and in practice, all nodes are supposed to download the same default UNL.
+
+[1] [Analysis of the XRP Ledger Consensus Protocol](https://arxiv.org/abs/1802.07242). Brad Chase, Ethan MacBrough, 2018.
+
+
