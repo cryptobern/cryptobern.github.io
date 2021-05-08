@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Asymmetric distributed trust
+title: Asymmetric Distributed Trust
 ghcommentid: 1
 ---
 

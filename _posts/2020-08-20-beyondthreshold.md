@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Consensus beyond thresholds
+title: Consensus Beyond Thresholds
 ghcommentid: 2
 ---
 
