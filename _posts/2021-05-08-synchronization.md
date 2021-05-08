@@ -7,11 +7,11 @@ ghcommentid: 4
 
 Scaling blockchains by reducing the concurrency across token transactions.
 
-The increasing popularity of decentralized applications has motivated prominent efforts (like [ETH2](//ethereum.org/en/eth2/)) towards improving the scalability and performance for blockchains. In this context, [research on distributed protocols](//www.distributedprogramming.net) plays a major role: many new proposals have emerged to scale the throughput of a blockchain platform, giving rise to a plethora of different distributed ledgers today. A common objective of these proposals is to ensure that blockchain nodes execute all transactions in the same order, using the [replicated state-machine approach](//www.cs.cornell.edu/fbs/publications/smsurvey.pdf) with a total-order broadcast protocol forming a chain of transactions:
+The increasing popularity of decentralized applications has motivated prominent efforts (like [ETH2](//ethereum.org/en/eth2/)) towards improving the scalability and performance for blockchains. In this context, [research on distributed protocols](//www.distributedprogramming.net) plays a major role: many new proposals have emerged to scale the throughput of a blockchain platform, giving rise to a plethora of different distributed ledgers today. A common objective of these proposals is to ensure that blockchain nodes execute all transactions in the same order, using the [replicated state-machine approach](//www.cs.cornell.edu/fbs/publications/smsurvey.pdf) where a broadcast protocol forms chain of transactions:
 
 ![Totally ordered transactions form a chain](/images/synchronization-linear.png){: width="70%" .center-image}
 
-This is often referred to as "consensus" due to the equivalence between these two abstractions. Since reaching consensus is expensive, it is important to understand where it may be avoided without losing consistency.
+This process is often referred to as "consensus", which is equivalent to total-order broadcast. Since reaching consensus is expensive, it is important to understand where it may be avoided without losing consistency.
 
 
 ### Concurrent objects for synchronization
