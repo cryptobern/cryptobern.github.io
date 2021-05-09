@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Synchronization Power of Token Smart Contracts
-author: Co-authored by Giorgia Marson, Luca Zanolini, and Christian Cachin
+author: Co-authored by Giorgia Marson, Luca Zanolini, Orestis Alpos, and Christian Cachin
 ghcommentid: 4
 ---
 
