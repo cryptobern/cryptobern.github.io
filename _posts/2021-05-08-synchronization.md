@@ -38,7 +38,7 @@ Modern blockchains support a variety of distributed applications realized by _sm
 
 In [recent work](//arxiv.org/abs/2101.05543), which will be published at [ICDCS 2021](//icdcs2021.us), we investigate the synchronization power of smart contracts on Ethereum, and in particular that of token contracts. We present an abstraction of a token object that captures and generalizes the functionality of an ERC20 contract.
 
-ERC20 is considerably more flexible than the transaction model in Bitcoin. The additional features of ERC20 make it possible, for example, to let account owners conditionally issue transfers to other users of their choosing. 
+ERC20 is considerably more flexible than the transaction model in Bitcoin. The additional features of ERC20 make it possible, for example, that account owners allow other users to interact with their accounts and issue transfers on their own.
 
 ![Concurrent ERC20 token object](/images/synchronization-erc20.png){: width="70%" .center-image}
 
