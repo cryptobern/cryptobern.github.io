@@ -2,7 +2,7 @@
 layout: post
 title: Asymmetric Asynchronous Byzantine Consensus
 author: Co-authored by Christian Cachin and Luca Zanolini
-ghcommentid: 4
+ghcommentid: 8
 ---
 
 We show how to realize randomized signature-free asynchronous Byzantine consensus with [asymmetric quorum systems](/asymmetric).
