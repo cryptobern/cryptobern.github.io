@@ -5,7 +5,7 @@ author: Co-authored by Christian Cachin and Luca Zanolini
 ghcommentid: 10
 ---
 
-Among asynchronous, randomized, and signature-free implementations of consensus, the family protocols by Mostéfaoui et al. ([PODC 2014](https://dl.acm.org/doi/10.1145/2611462.2611468) and [JACM 2015](https://dl.acm.org/doi/10.1145/2785953)) represent a landmark result.
+Among asynchronous, randomized, and signature-free implementations of consensus, the protocols by Mostéfaoui et al. ([PODC 2014](https://dl.acm.org/doi/10.1145/2611462.2611468) and [JACM 2015](https://dl.acm.org/doi/10.1145/2785953)) represent a landmark result.
 
 This work won the [best-paper award at PODC 2014](//dl.acm.org/doi/proceedings/10.1145/2611462) and has been taken later up in systems like [HoneyBadger BFT](https://dl.acm.org/doi/10.1145/2976749.2978399). The consensus protocols are relevant because they tolerate arbitrary message delays as well as timing uncertainties; they work in any asynchronous network; they do not use digital signatures; and they rely on a [common-coin](https://ieeexplore.ieee.org/document/4568104) primitive. 
 
