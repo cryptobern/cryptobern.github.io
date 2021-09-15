@@ -9,7 +9,7 @@ Composing Byzantine quorum systems for securing distributed protocols
 
 Trust is the basis of any distributed, fault-tolerant, or secure system. We consider systems, such as blockchain networks, that consist of multiple nodes or processes, of which some may fail. A trust assumption specifies the failures that a system can tolerate and determines the conditions under which it operates correctly.  In systems subject to arbitrary malicious behavior, or _Byzantine faults_, the trust assumption is usually specified through sets of processes that may fail together.  In the simplest case, this is just the belief that only _F_ nodes among _N_ would fail, where _F < N/3_.  Equivalently, the blockchain networks of proof-of-stake cryptocurrencies assume that misbehavior of participating nodes owning strictly less than third of the stake is tolerated.  [Tendermint Core](https://github.com/tendermint/tendermint), [Diem Byzantine Fault Tolerance (DiemBFT)](https://developers.diem.com/main/docs/state-machine-replication-paper), [Algorand](https://www.algorand.com), [Cardano](https://cardano.org), and many others use this notion of trust.  The trust assumption can be generalized and may be [symmetric](//doi.org/10.1007/s004460050050) or [asymmetric](https://cryptobern.github.io/asymmetric/); the latter means that the beliefs of the nodes are subjective, and may differ between nodes.
 
-What should be done when two groups of nodes, each one with their own beliefs, wish to be merged? This post explores how trust assumptions can be composed in symmetric-trust and asymmetric-trust models.
+What should be done when two groups of nodes, each one with their own beliefs, wish to be merged? This post explores how trust assumptions can be composed in symmetric and asymmetric trust models.
 
 ### Secure distributed systems rely on trust
 
@@ -52,11 +52,11 @@ A first thought would be to define the new, composite fail-prone system as the u
 It is true that this rule works, in the sense that it always leads to a BQS (technically, this should be read as "the _Q3_-condition always holds in the composite system, given that it holds in the original ones"), and processes in one system do not have to come up with new assumptions on the processes on the other. However, the fail-prone sets (and, thus, the tolerated failures in any execution) are rather limited; namely, no combined failure of processes in _P1_ and _P2_ is tolerated. Can we do better?
 
 #### A second approach: Cartesian composition
-It turns out that we can do better. Let us now construct the composite fail-prone system by taking the pairwise union of all fail-prone sets in the first and all fail-prone sets in the second system. Graphically, this could be shown as in the following graph, where the black lines represent set union.
+It turns out that we can overcome this limitation. Let us now construct the composite fail-prone system by taking the pairwise union of all fail-prone sets in the first and all fail-prone sets in the second system. Graphically, this could be shown as in the following graph, where the black lines represent set union.
 
 ![Symmetric composition, cartesian rule](/images/strangers/sym-cartesian-rule.png){: width="80%" .center-image}
 
-Although this rule is in the correct direction, there does exist a problem. Observe that _F3_, the composite fail-prone system, contains, among others,
+Although this rule explores the right direction, there does exist a problem. Observe that _F3_, the composite fail-prone system, contains, among others,
 the sets _{a, f, g}_, _{b, c, h}_, and _{c, e, d}_, also shown in the following figure.
 
 ![Symmetric composition, the problem with cartesian rule](/images/strangers/sym-cartesian-problem.png){: width="60%" .center-image}
@@ -64,7 +64,7 @@ the sets _{a, f, g}_, _{b, c, h}_, and _{c, e, d}_, also shown in the following 
 The problem with these three fail-prone sets is that their union covers _P3_. Hence, the _Q3_-condition does not hold and we do not have a BQS! But we started from two fail-prone systems that satisfied the _Q3_-condition, so, why did this happen? The problem is with the last of these sets, _{c, e, d}_. This set appears in _F3_, but not in the original systems: its projection in _P1_, which is _{c, e, d}_, is not in _F1_; and its projection in _P2_, which is _{e, d}_, is not in _F2_. In other words, the _Q3_-condition in the original systems holds because this set is not there. We have created a new fail-prone set that was not considered in the original systems. As a side note, this rule does indeed work (i.e., leads to a system where the _Q3_-condition holds) if the original systems do not contain common processes.
 
 #### The final composition rule: Cartesian composition with common processes
-So, let us present the final composition rule that solves the aforementioned problem. We again apply the pairwise union rule, but this time special care is taken when the two sets to be "unioned" contain common processes. Specifically, we union only fail-prone sets that contain exactly the same subset of the processes in common between _P1_ and _P2_. In the following figure, this special case is marked by a dashed line. 
+So, let us present the composition rule that we discovered and solves the aforementioned problem. We again apply the pairwise union rule, but this time special care is taken when the two sets to be "unioned" contain common processes. Specifically, we union only fail-prone sets that contain exactly the same subset of the processes in common between _P1_ and _P2_. In the following figure, this special case is marked by a dashed line. 
 
 ![Symmetric composition, the correct cartesian rule](/images/strangers/sym-cartesian2-rule.png){: width="80%" .center-image}
 
