@@ -2,7 +2,7 @@
 layout: post
 title: How to Trust Strangers
 author: Co-authored by Orestis Alpos, Christian Cachin and Luca Zanolini
-ghcommentid: 4
+ghcommentid: 11
 ---
 
 Composing Byzantine quorum systems for securing distributed protocols
