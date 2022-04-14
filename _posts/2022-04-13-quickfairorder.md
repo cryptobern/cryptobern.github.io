@@ -5,6 +5,7 @@ ghcommentid: 12
 author: Co-authored by Christian Cachin, Jovana Micic, Nathalie Steinhauer, and Luca Zanolini
 ---
 
+
 A new, efficient protocol prevents attacks on decentralized finance
 platforms and ensures a novel notion of differential order-fairness for
 transactions in atomic broadcast.
