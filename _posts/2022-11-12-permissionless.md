@@ -21,7 +21,9 @@ advantage or attacking the protocol.  Many protocols of this kind can be
 found in [textbooks on distributed
 algorithms](http://distributedprogramming.net), and the recent [HotStuff
 protocol](https://doi.org/10.1145/3293611.3331591) also works in this
-model.  Every node _knows_ all others that participate.  In these
+model.  Every node _knows_ all others that participate.  (Proof-of-Stake
+is similar, except nodes know how much total stake there is instead 
+of the identity of the other participants.)  In these
 algorithms and also in the corresponding practical systems, any set of
 _more than (N+F)/2_ participating nodes form a _quorum_.
 
