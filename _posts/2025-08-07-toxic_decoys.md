@@ -169,6 +169,10 @@ Our evaluation using real transaction data confirms that the approach can achiev
 
 These findings suggest that our approach represents a viable path for scaling privacy-preserving cryptocurrency systems without compromising their core security models. The approach offers a way to manage the storage growth that has long been considered an inevitable cost of strong privacy protection.
 
+For more information, check out the [full research paper](https://petsymposium.org/popets/2025/popets-2025-0165.php).
+
 ---
 
-_Check out the [full paper](https://petsymposium.org/popets/2025/popets-2025-0165.php)._
+_This work is part of our interdisciplinary research project on [Central Bank Digital Currency (CBDC)](//techlaw.group/project/cbdc/) and has also been supported by the [Initiative for Cryptocurrencies and Contracts (IC3)](//www.initc3.org)._
+
+
