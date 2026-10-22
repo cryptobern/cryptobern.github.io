@@ -1,0 +1,10 @@
+<figure class="uc-fig" id="uc-bounds" aria-labelledby="uc-bounds-caption">
+  <figcaption id="uc-bounds-caption"><strong>Figure 3.</strong> Change the masking-set size. LUAT stays at 2; strong CUAT grows quadratically in our model. The middle bar is the one-round upper bound; the longest bar is reached with several rounds.</figcaption>
+  <div class="uc-slider"><label for="uc-lambda">Masking-set size λ</label><input id="uc-lambda" type="range" min="2" max="10" value="3"><output for="uc-lambda" data-lambda>3</output></div>
+  <div class="uc-bars" role="img" aria-label="At lambda 3, LUAT is 2, the CUAT one-round upper bound is 7, and the multi-round value in our model is 9" data-chart>
+    <div><span>LUAT</span><i><b class="uc-bar uc-luat" data-bar="luat" style="width:22.22%"></b></i><strong>2</strong></div>
+    <div><span>CUAT · one round</span><i><b class="uc-bar uc-one" data-bar="one" style="width:77.78%"></b></i><strong data-one>7</strong></div>
+    <div><span>CUAT · several rounds</span><i><b class="uc-bar uc-many" data-bar="many" style="width:100%"></b></i><strong data-many>9</strong></div>
+  </div>
+  <div class="uc-readout" role="status" aria-live="polite" data-readout>For λ = 3, the Fano plane reaches the one-round limit of 7. Several rounds reach 9.</div>
+</figure>

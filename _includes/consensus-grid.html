@@ -1,0 +1,41 @@
+<figure class="uc-fig" id="uc-grid" data-step="4" aria-labelledby="uc-grid-caption">
+  <figcaption id="uc-grid-caption"><strong>Figure 5.</strong> Combining earlier agreement on a fresh grid of accounts, with λ = 3. In the nine-process case, there is <strong>one process per row masking set and two processes per column masking set</strong>. Each process owns a different account; its subscripts identify that account. The controls reveal how the grid is formed.</figcaption>
+  <div class="uc-controls" role="group" aria-label="Number of processes">
+    <span>Combine groups:</span><button type="button" data-stage="6" aria-pressed="false">3 + 3 = 6</button><button type="button" data-stage="9" aria-pressed="true">3 + 6 = 9</button>
+  </div>
+  <div class="uc-controls uc-grid-steps" role="group" aria-label="Grid construction steps">
+    <button type="button" data-step="1" aria-pressed="false">1. Accounts</button>
+    <button type="button" data-step="2" aria-pressed="false">2. Row group</button>
+    <button type="button" data-step="3" aria-pressed="false">3. Column group</button>
+    <button type="button" data-step="4" aria-pressed="true">4. Agreement</button>
+  </div>
+  <div class="uc-grid-layout">
+    <div>
+      <div class="uc-grid" role="group" aria-label="Three by three grid: each cell shows an account and its owner">
+        <span class="uc-corner">masking<br>sets</span>
+        <button type="button" data-col="1" aria-pressed="false" aria-label="Select column 1"><span class="uc-axis-name">C<sub>1</sub> ↓</span><span class="uc-axis-processes"><span>Q<sub>2,1</sub></span><span>Q<sub>3,1</sub></span></span></button>
+        <button type="button" data-col="2" aria-pressed="false" aria-label="Select column 2"><span class="uc-axis-name">C<sub>2</sub> ↓</span><span class="uc-axis-processes"><span>Q<sub>1,2</sub></span><span>Q<sub>3,2</sub></span></span></button>
+        <button type="button" data-col="3" aria-pressed="true" aria-label="Select column 3"><span class="uc-axis-name">C<sub>3</sub> ↓</span><span class="uc-axis-processes"><span>Q<sub>1,3</sub></span><span>Q<sub>2,3</sub></span></span></button>
+        <button type="button" data-row="1" aria-pressed="false" aria-label="Select row 1"><span class="uc-axis-name">R<sub>1</sub> →</span><span class="uc-axis-processes">P<sub>1,1</sub></span></button>
+        <span class="uc-cell" data-cell="11"><span>a<sub>11</sub></span><span class="uc-owner uc-owner-row">P<sub>1,1</sub></span></span>
+        <span class="uc-cell" data-cell="12"><span>a<sub>12</sub></span><span class="uc-owner uc-owner-col">Q<sub>1,2</sub></span></span>
+        <span class="uc-cell uc-in-col" data-cell="13"><span>a<sub>13</sub></span><span class="uc-owner uc-owner-col">Q<sub>1,3</sub></span></span>
+        <button type="button" data-row="2" aria-pressed="true" aria-label="Select row 2"><span class="uc-axis-name">R<sub>2</sub> →</span><span class="uc-axis-processes">P<sub>2,2</sub></span></button>
+        <span class="uc-cell uc-in-row" data-cell="21"><span>a<sub>21</sub></span><span class="uc-owner uc-owner-col">Q<sub>2,1</sub></span></span>
+        <span class="uc-cell uc-in-row" data-cell="22"><span>a<sub>22</sub></span><span class="uc-owner uc-owner-row">P<sub>2,2</sub></span></span>
+        <span class="uc-cell uc-meeting" data-cell="23"><span>a<sub>23</sub></span><span class="uc-owner uc-owner-col">Q<sub>2,3</sub></span></span>
+        <button type="button" data-row="3" aria-pressed="false" aria-label="Select row 3"><span class="uc-axis-name">R<sub>3</sub> →</span><span class="uc-axis-processes">P<sub>3,3</sub></span></button>
+        <span class="uc-cell" data-cell="31"><span>a<sub>31</sub></span><span class="uc-owner uc-owner-col">Q<sub>3,1</sub></span></span>
+        <span class="uc-cell" data-cell="32"><span>a<sub>32</sub></span><span class="uc-owner uc-owner-col">Q<sub>3,2</sub></span></span>
+        <span class="uc-cell uc-in-col" data-cell="33"><span>a<sub>33</sub></span><span class="uc-owner uc-owner-row">P<sub>3,3</sub></span></span>
+      </div>
+      <p class="uc-grid-key">Each cell shows an account above its owner.<br><span class="uc-row-key">P owns a diagonal account and uses its row.</span><br><span class="uc-col-key">Q owns an off-diagonal account and uses its column.</span><span data-unused-note hidden><br>— marks accounts used only as decoys in this round.</span></p>
+    </div>
+    <div class="uc-grid-groups" aria-label="Agreement within each group before the grid round">
+      <div class="uc-grid-group uc-row-group" data-reveal="2"><strong>3 processes already agree on y<sub>0</sub></strong><span>One process per row masking set.</span></div>
+      <div class="uc-grid-group uc-col-group" data-reveal="3"><strong data-column-group>6 processes already agree on y<sub>1</sub></strong><span data-column-count>Two processes per column masking set.</span></div>
+      <div class="uc-grid-group uc-grid-result" data-reveal="4"><strong data-incidence>Every account: 1 + 2 = 3 appearances.</strong><span>Only one group can win. Several transfers in that group may succeed; they all carry its earlier agreed value.</span></div>
+    </div>
+  </div>
+  <div class="uc-readout" role="status" aria-live="polite" data-readout>Row R<sub>2</sub> and column C<sub>3</sub> share a<sub>23</sub>. A successful row transfer invalidates every column transfer, and conversely. Processes in the losing group read a committed transfer and adopt the winning group's value.</div>
+</figure>

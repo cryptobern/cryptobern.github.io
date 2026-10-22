@@ -1,0 +1,26 @@
+<figure class="uc-fig" id="uc-transfer" aria-labelledby="uc-transfer-caption">
+  <figcaption id="uc-transfer-caption"><strong>Figure 1.</strong> Alice and Bob spend different accounts, but both name <em>c</em> as a decoy. Play the transfers to see what happens to the shared account.</figcaption>
+  <div class="uc-controls" role="group" aria-label="Transfer design">
+    <span>Design:</span>
+    <button type="button" data-mode="luat" aria-pressed="true">Linear state</button>
+    <button type="button" data-mode="cuat" aria-pressed="false">Constant state</button>
+  </div>
+  <div class="uc-transfer-pair">
+    <div class="uc-transfer-card uc-alice">
+      <strong>Alice</strong> <span class="uc-status" data-status="alice">Pending</span>
+      <small>Spends <em>a</em></small>
+      <div class="uc-accounts"><span class="uc-owned">a</span><span>b</span><span class="uc-shared" data-shared>c</span></div>
+    </div>
+    <div class="uc-transfer-card uc-bob">
+      <strong>Bob</strong> <span class="uc-status" data-status="bob">Pending</span>
+      <small>Spends <em>d</em></small>
+      <div class="uc-accounts"><span class="uc-shared" data-shared>c</span><span class="uc-owned">d</span><span>e</span></div>
+    </div>
+  </div>
+  <div class="uc-controls">
+    <button type="button" class="uc-primary" data-action="play">Play Alice then Bob</button>
+    <button type="button" data-action="reverse">Play Bob then Alice</button>
+    <button type="button" data-action="reset">Reset</button>
+  </div>
+  <div class="uc-readout" role="status" aria-live="polite" data-readout>Choose a design and play either order.</div>
+</figure>
